@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "docker build -t manual-deploy .",
+    "docker:run": "docker run -p 80:80 manual-deploy",
+    "docker:rebuild": "docker stop manual-deploy & docker rm manual-deploy & docker rmi manual-deploy & docker build -t manual-deploy . & docker run -p 80:80 manual-deploy"
   },
   "dependencies": {
     "react": "^19.1.0",
